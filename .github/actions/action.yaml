@@ -18,7 +18,7 @@ runs:
     - name: Set input value
       run: |
         echo "INPUT_VAL = ${{inputs.valor}}" >>$GITHUB_ENV
-      shel: bash
+      shell: bash
     - name: Get result
       id: get-result
       run: python src/main.py
