@@ -1,0 +1,27 @@
+name: Github Action Demo
+description: A github Action for python language
+inputs:
+  valor:
+    description: Ingrese un valor
+    required: true
+  outputs:
+    result:
+      description: Mostrar un salido con el nombre ingresado
+      value: ${{ steps.get_value.outputs.result}}
+  runs:
+    using: composite
+    steps:
+      - name: Install Python
+        uses: actions/setup-python@v5
+        wiht:
+          python-version: "3.10"
+      - name:
+        run: |
+          echo "INPUT_VAL = ${{inputs.valor}}" >>$GITHUB_ENV
+        shel: bash
+      - name: Get result
+        id: get-result
+        run: python src/main.py
+        shell: bash
+
+
