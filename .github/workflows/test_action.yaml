@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   get-result:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     name: Greet the user in Python
     steps:
      - name: Checkout
